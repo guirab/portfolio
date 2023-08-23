@@ -1,9 +1,9 @@
-import Image from 'next/image'
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      oi te amo
-    </main>
+    <div className="w-full h-page">
+      <Link href="/about">Sobre mim</Link>
+    </div>
   );
 }
