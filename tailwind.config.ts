@@ -14,7 +14,10 @@ const config: Config = {
       },
       height: {
         page: 'calc(100vh - 4rem)',
-      }
+      },
+      screens: {
+        small: { max: '412px' }
+      },
     },
   },
   plugins: [],
