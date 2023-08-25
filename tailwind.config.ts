@@ -16,7 +16,8 @@ const config: Config = {
         page: 'calc(100vh - 4rem)',
       },
       screens: {
-        small: { max: '412px' }
+        small: { max: '412px' },
+        medium: { max: '768px' },
       },
     },
   },

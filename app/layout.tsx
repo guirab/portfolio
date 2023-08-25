@@ -7,8 +7,8 @@ import { Header } from "@/components";
 const jetBrains = JetBrains_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Guirab Portfolio",
-  description: "Portfolio de desenvolvedor",
+  title: "Portfolio",
+  description: "Portfolio de Guilherme Rabelo",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
