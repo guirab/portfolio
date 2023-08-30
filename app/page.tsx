@@ -6,9 +6,9 @@ export default function Home() {
   return (
     <div className="w-full h-page">
       <div className="w-full h-full grid grid-rows-2 px-4 pt-36 small:pt-20">
-        <div className="flex flex-row medium:flex-col items-center w-full">
+        <div className="flex flex-row mobile:flex-col items-center w-full">
           <Typewriter />
-          <div className="w-full flex justify-center h-auto max-w-[40%] medium:max-w-[100%] px-16 small:px-8">
+          <div className="w-full flex justify-center h-auto max-w-[40%] mobile:max-w-[100%] mobile px-16 small:px-8">
             <Image
               className="object-contain"
               src="/assets/computing_guy.svg"

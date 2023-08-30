@@ -18,6 +18,7 @@ const config: Config = {
       screens: {
         small: { max: '412px' },
         medium: { max: '768px' },
+        mobile: { max: '965px' },
       },
     },
   },
