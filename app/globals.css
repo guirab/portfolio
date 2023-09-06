@@ -2,3 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+}
+
+.container .display {
+  font-size: 20px;
+  color: black;
+}
+
+.container .magnifying-glass {
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  opacity: 0;
+}
+
+.container .magnifying-glass .magnify-fx {
+  font-size: 20px;
+  -webkit-text-fill-color: aquamarine;
+}
