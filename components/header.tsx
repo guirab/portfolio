@@ -11,7 +11,7 @@ export const Header = () => {
               <AiOutlineHome className="h-5 w-5" />
               Home
             </span>
-            <div className="rounded-md h-1.5 bg-[#e81cff] group-hover:translate-x-0 w-full -translate-x-20 transition duration-300" />
+            <div className="rounded-md h-1.5 bg-header group-hover:translate-x-0 w-full -translate-x-20 transition duration-300" />
           </button>
         </Link>
         <Link href={"/about"}>
@@ -20,7 +20,7 @@ export const Header = () => {
               <AiOutlineUser className="h-5 w-5" />
               About me
             </span>
-            <div className="rounded-md h-1.5 bg-[#e81cff] group-hover:translate-x-0 w-full -translate-x-28 transition duration-300" />
+            <div className="rounded-md h-1.5 bg-header group-hover:translate-x-0 w-full -translate-x-28 transition duration-300" />
           </button>
         </Link>
       </div>

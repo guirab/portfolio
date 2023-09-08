@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={jetBrains.className}>
-        <main className="bg-main h-screen w-screen">
+        <main className="bg-main-background h-screen w-screen">
           <Header />
           {children}
         </main>
