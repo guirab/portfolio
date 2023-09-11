@@ -3,9 +3,9 @@ import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 
 export const Header = () => {
   return (
-    <div className="w-full pt-8">
+    <div className="w-full pt-8 fixed backdrop-blur-sm">
       <div className="flex w-11/12 text-center justify-end gap-16">
-        <Link href={"/"}>
+        <Link href="#home">
           <button className="w-fit group overflow-hidden items-end">
             <span className="flex flex-row gap-2">
               <AiOutlineHome className="h-5 w-5" />
@@ -14,7 +14,7 @@ export const Header = () => {
             <div className="rounded-md h-1.5 bg-header group-hover:translate-x-0 w-full -translate-x-20 transition duration-300" />
           </button>
         </Link>
-        <Link href={"/about"}>
+        <Link href="#about">
           <button className="group overflow-hidden items-end">
             <span className="flex flex-row gap-2">
               <AiOutlineUser className="h-5 w-5" />

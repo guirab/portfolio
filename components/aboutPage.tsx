@@ -3,9 +3,9 @@ import Image from "next/image";
 
 import { MouseOver, Reveal } from "@/components";
 
-export default function About() {
+export const About = () => {
   return (
-    <div className="h-page w-full overflow-y-scroll scrollbar-none">
+    <div className="h-full w-full">
       <div className="flex flex-col pt-24 mobile:pt-16 px-8 space-y-8">
         <div className="flex flex-row">
           <MouseOver />
@@ -37,4 +37,4 @@ export default function About() {
       </div>
     </div>
   );
-}
+};
