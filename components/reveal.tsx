@@ -10,7 +10,7 @@ export const Reveal = ({
   className?: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref);
 
   const mainControls = useAnimation();
   const slideControls = useAnimation();
@@ -19,6 +19,9 @@ export const Reveal = ({
     if (isInView) {
       mainControls.start("visible");
       slideControls.start("visible");
+    } else {
+      mainControls.start("hidden");
+      slideControls.start("hidden");
     }
   }, [isInView]);
 

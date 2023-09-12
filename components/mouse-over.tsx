@@ -30,15 +30,5 @@ export const MouseOver = () => {
   //   });
   // }, []);
 
-  return (
-    <div className="flex justify-center items-center flex-col w-7/12">
-      <h1 className="text-4xl font-bold">About me</h1>
-      <h2 className="text-lg">
-        I am Full-Stack Developer with great passion for programming and
-        innovating.
-        <br />
-        Always looking for new challenges and opportunities to learn and grow.
-      </h2>
-    </div>
-  );
+  return <></>;
 };

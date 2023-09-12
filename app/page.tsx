@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Typewriter, About } from "@/components";
+import { Typewriter, About, Reveal } from "@/components";
 
 export default function Home() {
   return (

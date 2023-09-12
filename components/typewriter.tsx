@@ -2,6 +2,7 @@
 "use client";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
+
 export const Typewriter = () => {
   const { "0": text } = useTypewriter({
     words: ["Web Developer", "Full Stack", "Almost Graduated"],
