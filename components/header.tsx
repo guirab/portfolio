@@ -3,7 +3,7 @@ import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 
 export const Header = () => {
   return (
-    <div className="w-full pt-8 fixed backdrop-blur-sm z-20">
+    <header className="w-full pt-8 fixed backdrop-blur-sm z-50">
       <div className="flex w-11/12 text-center justify-end gap-16">
         <Link href="#home">
           <button className="w-fit group overflow-hidden items-end">
@@ -24,6 +24,6 @@ export const Header = () => {
           </button>
         </Link>
       </div>
-    </div>
+    </header>
   );
 };
