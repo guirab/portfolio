@@ -15,7 +15,9 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'main-background': 'linear-gradient(45deg, hsla(270, 94%, 25%, 1) 0%, hsla(158, 94%, 49%, 1) 100%);',
-        // 'header': 'linear-gradient(90deg, hsla(217, 100%, 50%, 1) 0%, hsla(186, 100%, 69%, 1) 100%);',
+        'card-frontend': 'linear-gradient(70deg, #40046c 40%, #5a7ca4 40%);',
+        'card-tools': 'linear-gradient(110deg, #fd6d4b 60%, #fd8d3b 60%)',
+        'card-backend':'linear-gradient(110deg, #a60af3 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #7a00cc 70%, #c03fff 70%);',
         'header': '#40047c',
       },
       height: {
