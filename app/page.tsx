@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { Typewriter, About, Reveal } from "@/components";
+import { Typewriter, About, Reveal, Projects } from "@/components";
 
 export default function Home() {
   return (
@@ -19,8 +19,11 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="h-full w-full" id="about">
+      <div className="h-full w-full pt-24 mobile:pt-16" id="about">
         <About />
+      </div>
+      <div className="h-full w-full pt-24 mobile:pt-16" id="projects">
+        <Projects />
       </div>
     </div>
   );

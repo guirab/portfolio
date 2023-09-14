@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
+import { GrProjects } from "react-icons/gr";
 
 export const Header = () => {
   return (
@@ -19,6 +20,15 @@ export const Header = () => {
             <span className="flex flex-row gap-2">
               <AiOutlineUser className="h-5 w-5" />
               About me
+            </span>
+            <div className="rounded-md h-1.5 bg-header group-hover:translate-x-0 w-full -translate-x-28 transition duration-300" />
+          </button>
+        </Link>
+        <Link href="#projects">
+          <button className="group overflow-hidden items-end">
+            <span className="flex flex-row gap-2">
+              <GrProjects className="h-5 w-5" />
+              Projects
             </span>
             <div className="rounded-md h-1.5 bg-header group-hover:translate-x-0 w-full -translate-x-28 transition duration-300" />
           </button>
