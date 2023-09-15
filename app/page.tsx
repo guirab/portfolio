@@ -19,7 +19,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="h-full w-full pt-24 mobile:pt-16" id="about">
+      <div className="h-auto w-full pt-24 mobile:pt-16" id="about">
         <About />
       </div>
       <div className="h-full w-full pt-24 mobile:pt-16" id="projects">

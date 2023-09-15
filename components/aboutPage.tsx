@@ -28,7 +28,7 @@ export const About = () => {
         </h2>
       </div>
       <h1 className="text-4xl font-bold">Skills</h1>
-      <div className="flex gap-8 justify-center w-full items-center medium:flex-col medium:w-full text-white">
+      <div className="flex gap-8 justify-center w-full items-center medium:flex-col text-white">
         <CardSkills className="bg-card-frontend" title="FrontEnd">
           {frontEnd.map((skill) => (
             <Reveal key={skill}>

@@ -1,125 +1,88 @@
 "use client";
-
 import Link from "next/link";
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { GrProjects } from "react-icons/gr";
-import { useCycle, motion } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 
-import { MenuToggle } from "./menuToggle";
 import { useDimensions } from "@/hooks";
+import { useState } from "react";
+import { MenuToggle } from "./menuToggle";
 
 export const Header = () => {
+  const [open, setOpen] = useState(false);
   const [isOpen, toggleOpen] = useCycle(false, true);
+
   const { width } = useDimensions();
 
-  const navbar = {
-    open: {
-      clipPath: `circle(${width}px at 40px 40px)`,
-      transition: {
-        when: "beforeChildren",
-        duration: 0.3,
-      },
-      backgroundColor: "blue",
+  const pages = [
+    {
+      name: "Home",
+      link: "#home",
+      icon: <AiOutlineHome className="h-5 w-5" />,
     },
-    closed: {
-      clipPath: `circle(30px at 40px 40px)`,
-      zIndex: 0,
-      transition: {
-        delay: 0.2,
-        type: "spring",
-        stiffness: 400,
-        damping: 40,
-      },
-      backgroundColor: "rgb(173 65 210/var(0.5))",
+    {
+      name: "About me",
+      link: "#about",
+      icon: <AiOutlineUser className="h-5 w-5" />,
     },
-  };
+    {
+      name: "Projects",
+      link: "#projects",
+      icon: <GrProjects className="h-5 w-5" />,
+    },
+  ];
 
   return (
-    <motion.div className="w-full absolute top-0 left-0 z-50 pt-8 mobile:pt-0">
+    <motion.div
+      initial={false}
+      animate={isOpen ? "open" : "closed"}
+      className="w-full absolute top-0 left-0 z-50 pt-8 mobile:pt-0 backdrop-blur-md"
+    >
       {width < 965 ? (
-        <motion.div
-          initial={false}
-          animate={isOpen ? "open" : "closed"}
-          className="flex h-16"
-        >
-          <motion.div
-            className="h-full w-full relative flex items-center justify-center"
-            variants={navbar}
+        <div className="flex items-center px-10">
+          <MenuToggle
+            toggle={() => {
+              setOpen(!open);
+              toggleOpen();
+            }}
+          />
+          <ul
+            className={`flex items-center absolute bg-cyan-500 z-auto left-0 w-full transition-all duration-300 ease-in tablet:justify-around tablet:pr-24 ${
+              open ? "top-0" : "top-[-200px]"
+            }`}
           >
-            <div className="flex text-center justify-end gap-16">
-              <Link href="#home">
-                <button
-                  className={
-                    isOpen ? "w-fit group overflow-hidden items-end" : "hidden"
-                  }
-                  onClick={() => toggleOpen()}
+            {pages.map((page) => (
+              <li key={page.name} className="ml-8 my-7 font-semibold text-sm">
+                <Link
+                  onClick={() => {
+                    setOpen(!open);
+                    toggleOpen();
+                  }}
+                  href={page.link}
+                  className="text-gray-800 duration-500"
                 >
-                  <span className="flex flex-row gap-2 text-sm">
-                    <AiOutlineHome className="h-4 w-4" />
-                    Home
-                  </span>
-                </button>
-              </Link>
-              <Link href="#about">
-                <button
-                  className={
-                    isOpen ? "w-fit group overflow-hidden items-end" : "hidden"
-                  }
-                  onClick={() => toggleOpen()}
-                >
-                  <span className="flex flex-row gap-2 text-sm">
-                    <AiOutlineUser className="h-4 w-4" />
-                    About me
-                  </span>
-                </button>
-              </Link>
-              <Link href="#projects">
-                <button
-                  className={
-                    isOpen ? "w-fit group overflow-hidden items-end" : "hidden"
-                  }
-                  onClick={() => toggleOpen()}
-                >
-                  <span className="flex flex-row gap-2 text-sm">
-                    <GrProjects className="h-4 w-4" />
-                    Projects
-                  </span>
-                </button>
-              </Link>
-              <MenuToggle toggle={() => toggleOpen()} />
-            </div>
-          </motion.div>
-        </motion.div>
-      ) : (
-        <div className="flex w-11/12 text-center justify-end gap-16">
-          <Link href="#home">
-            <button className="w-fit group overflow-hidden items-end">
-              <span className="flex flex-row gap-2">
-                <AiOutlineHome className="h-5 w-5" />
-                Home
-              </span>
-              <div className="rounded-md h-1.5 bg-header group-hover:translate-x-0 w-full -translate-x-20 transition duration-300" />
-            </button>
-          </Link>
-          <Link href="#about">
-            <button className="group overflow-hidden items-end">
-              <span className="flex flex-row gap-2">
-                <AiOutlineUser className="h-5 w-5" />
-                About me
-              </span>
-              <div className="rounded-md h-1.5 bg-header group-hover:translate-x-0 w-full -translate-x-28 transition duration-300" />
-            </button>
-          </Link>
-          <Link href="#projects">
-            <button className="group overflow-hidden items-end">
-              <span className="flex flex-row gap-2">
-                <GrProjects className="h-5 w-5" />
-                Projects
-              </span>
-              <div className="rounded-md h-1.5 bg-header group-hover:translate-x-0 w-full -translate-x-28 transition duration-300" />
-            </button>
-          </Link>
+                  {page.icon}
+                  {page.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
+      ) : (
+        <ul className="flex w-11/12 text-center justify-end gap-16">
+          {pages.map((page) => (
+            <li
+              key={page.name}
+              className="w-fit group overflow-hidden items-end"
+            >
+              <Link href={page.link} className="flex flex-row gap-2">
+                {page.icon}
+                {page.name}
+              </Link>
+              <div className="rounded-md h-1.5 bg-header group-hover:translate-x-0 w-full -translate-x-28 transition duration-300" />
+            </li>
+          ))}
+        </ul>
       )}
     </motion.div>
   );

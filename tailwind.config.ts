@@ -27,6 +27,7 @@ const config: Config = {
         small: { max: '412px' },
         medium: { max: '768px' },
         mobile: { max: '965px' },
+        tablet: { min: '475px' },
       },
     },
   },
